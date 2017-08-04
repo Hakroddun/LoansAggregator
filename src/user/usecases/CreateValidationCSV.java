@@ -14,18 +14,8 @@ public class CreateValidationCSV
         CSVReader reader = createCSVReader();
         CSVWriter writer = createCSVWriter();
         LoansDataFormatter formatter = new LoansDataFormatter();
-        AggregateInteractorImpl aggregateInteractor = setInteractorModules(tupleGenerator, formatter, reader, writer);
+        AggregateInteractorImpl aggregateInteractor = new AggregateInteractorImpl(tupleGenerator, reader, writer, formatter);
         aggregateInteractor.Aggregate();
-    }
-
-    private static AggregateInteractorImpl setInteractorModules(TupleGeneratorImpl tupleGenerator, LoansDataFormatter formatter, CSVReader reader, CSVWriter writer)
-    {
-        AggregateInteractorImpl aggregateInteractor = new AggregateInteractorImpl();
-        aggregateInteractor.setTupleGenerator(tupleGenerator);
-        aggregateInteractor.setFormatter(formatter);
-        aggregateInteractor.setReader(reader);
-        aggregateInteractor.setWriter(writer);
-        return aggregateInteractor;
     }
 
     private static TupleGeneratorImpl CreateTupleGenerator()

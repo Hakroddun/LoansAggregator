@@ -7,5 +7,5 @@ import java.util.List;
  */
 public interface DataFormatter
 {
-    public String Format(List data);
+    public String Format(String data);
 }

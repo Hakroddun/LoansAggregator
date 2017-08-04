@@ -8,10 +8,13 @@ import java.util.List;
 public class LoansDataFormatter implements DataFormatter
 {
     @Override
-    public String Format(List data)
+    public String Format(String data)
     {
-        String formattedData;
-        formattedData = data.toString();
+        String formattedData = data;
+        formattedData = formattedData.replace("Loans(","");
+        formattedData = formattedData.replace("),",",\n");
+        formattedData = formattedData.replace("[","");
+        formattedData = formattedData.replace(")]","");
         return formattedData;
     }
 }

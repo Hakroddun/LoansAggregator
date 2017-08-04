@@ -35,12 +35,20 @@ public class AggregateInteractorImpl implements AggregateInteractor
         this.formatter = formatter;
     }
 
+    public AggregateInteractorImpl(TupleGenerator tupleGenerator, Reader reader, Writer writer, DataFormatter formatter)
+    {
+        this.tupleGenerator = tupleGenerator;
+        this.reader = reader;
+        this.writer = writer;
+        this.formatter = formatter;
+    }
+
     @Override
     public void Aggregate()
     {
         List list = reader.read();
         list = tupleGenerator.Group(list);
-        String formattedData = formatter.Format(list);
+        String formattedData = formatter.Format(list.toString());
         writer.write(formattedData);
     }
 }

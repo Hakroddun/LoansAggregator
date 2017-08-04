@@ -161,4 +161,32 @@ public class AggregateInteractorTest
             return expectedData;
         }
     }
+
+    public class FormatterTest
+    {
+        @Test
+        public void readFile()
+        {
+            String initialString = "[Loans(27722342551,'Network 2','16-Mar-2016','Loan Product 1',1122.0,1), " +
+                    "Loans(27729234533,'Network 2','01-Apr-2016','Loan Product 1',5671.0,1), " +
+                    "Loans(27725678534,'Network 2','15-Apr-2016','Loan Product 3',1747.0,1), " +
+                    "Loans(27723453455,'Network 3','12-Apr-2016','Loan Product 3',1928.0,1), " +
+                    "Loans(27725544272,'Network 3','17-Mar-2016','Loan Product 2',5182.0,2), " +
+                    "Loans(27729554427,'Network 1','12-Mar-2016','Loan Product 1',1000.0,1), " +
+                    "Loans(27729554427,'Network 1','16-Apr-2016','Loan Product 2',1801.0,1)]";
+
+            String expectedString = "27722342551,'Network 2','16-Mar-2016','Loan Product 1',1122.0,1, " +
+                    "27729234533,'Network 2','01-Apr-2016','Loan Product 1',5671.0,1, " +
+                    "27725678534,'Network 2','15-Apr-2016','Loan Product 3',1747.0,1, " +
+                    "27723453455,'Network 3','12-Apr-2016','Loan Product 3',1928.0,1, " +
+                    "27725544272,'Network 3','17-Mar-2016','Loan Product 2',5182.0,2, " +
+                    "27729554427,'Network 1','12-Mar-2016','Loan Product 1',1000.0,1, " +
+                    "27729554427,'Network 1','16-Apr-2016','Loan Product 2',1801.0,1";
+
+            LoansDataFormatter formatter = new LoansDataFormatter();
+            String formattedString = formatter.Format(initialString);
+            Assert.assertEquals(formattedString, expectedString);
+
+        }
+    }
 }
