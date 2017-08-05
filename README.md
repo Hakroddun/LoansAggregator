@@ -12,7 +12,7 @@ and writes the resulting aggregation to a CSV.
 
 *Motivation for use of language, plugins and 3rd party libraries*  
 I used java because it is widely known and I have experience in coding it.  
-The libraries and plugins I used is mainly for unit testing to help in making changing the code easier.  
+The libraries and plugins I used is mainly for unit testing to help make changing the code easier.  
 
 *Getting started*  
 Open the CreateValidationCSV.java.   
