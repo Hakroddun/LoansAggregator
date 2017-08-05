@@ -113,7 +113,7 @@ public class AggregateInteractorTest
         public void readFile()
         {
             CSVReader reader = new CSVReader();
-            reader.setFilePath("F:/loans.csv");
+            reader.setFilePath("D:/loans.csv");
             initialList = reader.read();
             Assert.assertEquals(initialList.toString(), expectedList.toString());
 
@@ -138,7 +138,7 @@ public class AggregateInteractorTest
         @Test
         public void readFile()
         {
-            String filePath = "F:/test.csv";
+            String filePath = "D:/test.csv";
             CSVWriter writer = new CSVWriter();
             writer.setFilePath(filePath);
             writer.write(initialList.toString());
@@ -175,12 +175,12 @@ public class AggregateInteractorTest
                     "Loans(27729554427,'Network 1','12-Mar-2016','Loan Product 1',1000.0,1), " +
                     "Loans(27729554427,'Network 1','16-Apr-2016','Loan Product 2',1801.0,1)]";
 
-            String expectedString = "27722342551,'Network 2','16-Mar-2016','Loan Product 1',1122.0,1, " +
-                    "27729234533,'Network 2','01-Apr-2016','Loan Product 1',5671.0,1, " +
-                    "27725678534,'Network 2','15-Apr-2016','Loan Product 3',1747.0,1, " +
-                    "27723453455,'Network 3','12-Apr-2016','Loan Product 3',1928.0,1, " +
-                    "27725544272,'Network 3','17-Mar-2016','Loan Product 2',5182.0,2, " +
-                    "27729554427,'Network 1','12-Mar-2016','Loan Product 1',1000.0,1, " +
+            String expectedString = "27722342551,'Network 2','16-Mar-2016','Loan Product 1',1122.0,1,\n " +
+                    "27729234533,'Network 2','01-Apr-2016','Loan Product 1',5671.0,1,\n " +
+                    "27725678534,'Network 2','15-Apr-2016','Loan Product 3',1747.0,1,\n " +
+                    "27723453455,'Network 3','12-Apr-2016','Loan Product 3',1928.0,1,\n " +
+                    "27725544272,'Network 3','17-Mar-2016','Loan Product 2',5182.0,2,\n " +
+                    "27729554427,'Network 1','12-Mar-2016','Loan Product 1',1000.0,1,\n " +
                     "27729554427,'Network 1','16-Apr-2016','Loan Product 2',1801.0,1";
 
             LoansDataFormatter formatter = new LoansDataFormatter();

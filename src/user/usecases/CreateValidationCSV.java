@@ -29,14 +29,14 @@ public class CreateValidationCSV
     private static CSVWriter createCSVWriter()
     {
         CSVWriter writer = new CSVWriter();
-        writer.setFilePath("F:/Test.csv");
+        writer.setFilePath("D:/Output.csv");
         return writer;
     }
 
     private static CSVReader createCSVReader()
     {
         CSVReader reader = new CSVReader();
-        reader.setFilePath("F:/Loans.csv");
+        reader.setFilePath("D:/Loans.csv");
         return reader;
     }
 }
