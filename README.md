@@ -18,7 +18,7 @@ The libraries and plugins I used is mainly for unit testing to help in making ch
 Open the CreateValidationCSV.java.   
 Set the file path of the input csv in the createCSVReader method.  
 Set the file path of the output csv in the createCSVWriter method.  
-Compile the code.
+Compile the code.  
 Run CreateValidationCSV.
 
 
